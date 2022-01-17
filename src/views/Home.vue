@@ -1,17 +1,38 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <section class="home">
+    <div>
+      <div class="flex mb-4 justify-between items-center">
+      <h2 class="text-left text-3xl">Popular Areas</h2>
+      <router-link to="/all-areas" class="inline-block py-1 px-3 underline underline-offset-4">
+        <span class="text-xs">
+          See All
+        </span>
+      </router-link>
+      </div>
+      <areas-selector :areas="areas" type="popular"/>
+    </div>
+
+    <div class="mt-24">
+    <h2 class="h1 text-left text-3xl mb-3">Popular Competition</h2>
+    </div>
+  </section>
 </template>
 
 <script>
-import HelloWorld from '@/components/HelloWorld.vue';
+import AreasSelector from '@/components/AreasSelector.vue';
+
+const AREAS_DATA = require('../../data/areas.json');
 
 export default {
   name: 'Home',
-  components: {
-    HelloWorld,
+  data() {
+    return {
+      areas: AREAS_DATA.areas,
+    };
   },
+  components: {
+    AreasSelector,
+  },
+  methods: {},
 };
 </script>
