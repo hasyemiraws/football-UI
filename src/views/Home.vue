@@ -20,6 +20,7 @@
 
 <script>
 import AreasSelector from '@/components/AreasSelector.vue';
+import axios from 'axios';
 
 const AREAS_DATA = require('../../data/areas.json');
 
@@ -34,5 +35,21 @@ export default {
     AreasSelector,
   },
   methods: {},
+  mounted() {
+    const url = 'http://api.football-data.org/v2/areas/';
+
+    axios
+      .get(
+        url,
+        {
+          headers: {
+            'X-Auth-Token': '7880b2049a8d4c829f28937beabc0d76',
+          },
+        },
+      )
+      .then(
+        (response) => console.log(response),
+      );
+  },
 };
 </script>

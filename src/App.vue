@@ -2,7 +2,9 @@
   <div>
     <Header/>
     <div class="container mx-auto px-3 mt-10">
-      <router-view/>
+      <transition name="fade">
+        <router-view/>
+      </transition>
     </div>
   </div>
 </template>
