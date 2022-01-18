@@ -36,7 +36,7 @@ export default {
   },
   methods: {},
   mounted() {
-    const url = 'http://api.football-data.org/v2/areas/';
+    const url = 'https://api.football-data.org/v2/areas/';
 
     axios
       .get(
